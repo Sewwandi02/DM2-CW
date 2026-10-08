@@ -1,0 +1,19 @@
+# Run from RMAN after creating D:\SmartMoveBackups\Oracle.
+# Archive log mode must be enabled for point-in-time recovery.
+CONFIGURE CONTROLFILE AUTOBACKUP ON;
+CONFIGURE RETENTION POLICY TO RECOVERY WINDOW OF 14 DAYS;
+
+RUN {
+    ALLOCATE CHANNEL smartmove_disk DEVICE TYPE DISK
+        FORMAT 'D:\SmartMoveBackups\Oracle\%d_%T_%U.bkp';
+
+    BACKUP AS COMPRESSED BACKUPSET
+        DATABASE
+        PLUS ARCHIVELOG
+        TAG 'SMARTMOVE_DAILY';
+
+    RELEASE CHANNEL smartmove_disk;
+}
+
+CROSSCHECK BACKUP;
+DELETE NOPROMPT OBSOLETE;

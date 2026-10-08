@@ -1,0 +1,48 @@
+backend/target/
+backend/application-local.properties
+backend/*.local.properties
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Flutter, Dart, Android, and desktop build state
+frontend/.dart_tool/
+frontend/.packages
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/build/
+frontend/coverage/
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/android/app/debug/
+frontend/android/app/profile/
+frontend/android/app/release/
+frontend/windows/flutter/ephemeral/
+frontend/.idea/
+frontend/*.iml
+
+# Local logs, database files, and backup archives
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.archive
+*.bkp
+
+# Local coursework material and superseded MongoDB folder
+/DM2 CW*.docx
+/MongoDB/
+frontend/.dart_tool/
+frontend/.packages
+frontend/build/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/windows/flutter/ephemeral/
